@@ -325,12 +325,17 @@ func (ethash *Ethash) CalcDifficulty(chain consensus.ChainHeaderReader, time uin
 	//log.Info("Uncle flag = ")
 	//fmt.Println(miner.UNCLEFLAG)
 	//REU
+	if types.No_Uncle == false {
 	if miner.UNCLEFLAG == true {
 		//miner.UNCLEFLAG = false
 		return big.NewInt(1)
 	} else {
 		//return CalcDifficulty(chain.Config(), time, parent)
 		return big.NewInt(800000)
+	}
+	}
+	else {
+		return CalcDifficulty(chain.Config(), time, parent)
 	}
 	return big.NewInt(0)
 }
