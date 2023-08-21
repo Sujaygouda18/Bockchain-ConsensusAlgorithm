@@ -324,7 +324,7 @@ func (ethash *Ethash) CalcDifficulty(chain consensus.ChainHeaderReader, time uin
 	//code change
 	//log.Info("Uncle flag = ")
 	//fmt.Println(miner.UNCLEFLAG)
-	//REU
+	//REU Game Theory
 	if types.No_Uncle == false {
 	if miner.UNCLEFLAG == true {
 		//miner.UNCLEFLAG = false
@@ -660,7 +660,7 @@ func accumulateRewards(config *params.ChainConfig, state *state.StateDB, header 
 	// Select the correct block reward based on chain progression
 	blockReward := FrontierBlockReward
 
-	//REU
+	//REU Game Theory
 	if miner.UNCLEFLAG == true {
 		blockReward = Reward1
 		miner.UNCLEFLAG = false
