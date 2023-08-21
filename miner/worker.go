@@ -638,6 +638,7 @@ func (w *worker) resultLoop() {
 				log.Error("Failed writing block to chain", "err", err)
 				continue
 			}
+			// REU Game Theory
 			//code change
 			//BLOCKNO = new(big.Int).SetUint64(next.index)
 			minerflag = 1
